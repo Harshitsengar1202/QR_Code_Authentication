@@ -15,7 +15,7 @@ transform = transforms.Compose([
 ])
 
 # Load dataset
-data_dir = "dataset"  # Change this to your actual dataset path
+data_dir = "G:\\vikas laptop backup\\lucky\\Alemeno Assignment\\"  # Change this to your actual dataset path
 train_data = datasets.ImageFolder(root=data_dir, transform=transform)
 train_loader = DataLoader(train_data, batch_size=8, shuffle=True)
 
