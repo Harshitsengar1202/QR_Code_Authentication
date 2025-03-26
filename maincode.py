@@ -15,11 +15,11 @@ transform = transforms.Compose([
 ])
 
 # Load dataset
-data_dir = "Dataset"  # Change this to your actual dataset path
+data_dir = "Dataset"  
 train_data = datasets.ImageFolder(root=data_dir, transform=transform)
 train_loader = DataLoader(train_data, batch_size=8, shuffle=True)
 
-# Class names
+
 class_names = train_data.classes
 print("Classes:", class_names)
 
@@ -29,7 +29,7 @@ import torch.nn as nn
 import torchvision.models as models
 
 # Load ResNet18 model
-model = models.resnet18(pretrained=True)
+model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
 
 # Modify the last layer for binary classification
 num_features = model.fc.in_features
